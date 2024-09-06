@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: python-app
-          image: europe-west2-docker.pkg.dev/onecom-operations/git-repo/test-image2:44
+          image: us-central1-docker.pkg.dev/qa-nextgen/git-repo/helloworld:6
           ports:
             - containerPort: 80
           command:
