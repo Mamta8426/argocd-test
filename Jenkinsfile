@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                        withCredentials([usernamePassword(credentialsId: 'gittoken', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                        withCredentials([usernamePassword(credentialsId: 'GitHub_Auth', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                             sh "git config user.email 'mamta8426@gmail.com'"
                             sh "git config user.name 'Mamta8426'"
                             sh "sed -i 's|test-image2:latest|${REGISTRY_NAME}/${IMAGE_NAME}:${IMAGE_TAG}|g' deployment.yaml"
